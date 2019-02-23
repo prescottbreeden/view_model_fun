@@ -1,0 +1,30 @@
+@model User
+
+<h1>User Information Portal</h1>
+<hr>
+<a href="/firstname">First Name</a> |
+<a href="/lastname">Last Name</a> |
+<a href="/fullname">Full Name</a> |
+<a href="/friends">Friends</a> |
+<a href="/numbers">Numbers</a> |
+<a href="/all">All Info</a> 
+<hr>
+
+<h3>First Name: @Model.FirstName</h3>
+<h3>Last Name: @Model.LastName</h3>
+
+<h3>User Favorite Numbers:</h3>
+@{
+  foreach(int num in @Model.FavoriteNumbers)
+  {
+    <p>@num</p>
+  }
+}
+
+<h3>User Best Friends:</h3>
+@{
+  foreach(string friend in @Model.BestFriends)
+  {
+    <p>@friend</p>
+  }
+}
